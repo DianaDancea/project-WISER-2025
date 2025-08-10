@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-10T02:09:09.481346",
+    "qiskit_available": true,
+    "original_assets": 2629,
+    "quantum_assets": 16,
+    "characteristics_used": [
+      "duration",
+      "spread",
+      "price",
+      "market_value",
+      "rating",
+      "maturity"
+    ],
+    "implementation": "Manual_VQE_Trading_Optimization"
+  },
+  "data_preparation": {
+    "characteristics": {
+      "duration": "spreadDur",
+      "spread": "oas",
+      "price": "price",
+      "market_value": "fund_enriched.notionalMktValue",
+      "rating": "spreadDur",
+      "maturity": "maturity"
+    },
+    "available_trading_data": {
+      "price": {
+        "purpose": "Bond prices (cost minimization)",
+        "count": 16,
+        "range": [
+          0.0,
+          1.0
+        ],
+        "mean": 0.4779772006063458,
+        "sample": [
+          0.06963001150384772,
+          0.5696818001203053,
+          0.630771896236194
+        ]
+      },
+      "oas": {
+        "purpose": "Credit spreads (yield maximization)",
+        "count": 16,
+        "range": [
+          0.0,
+          1.0
+        ],
+        "mean": 0.3566900720177811,
+        "sample": [
+          0.0,
+          0.09345798108940102,
+          0.9252507467560364
+        ]
+      },
+      "spreadDur": {
+        "purpose": "Duration (risk management)",
+        "count": 16,
+        "range": [
+          0.0,
+          1.0
+        ],
+        "mean": 0.6761353450269088,
+        "sample": [
+          0.5794403273114478,
+          0.8212433404922932,
+          1.0
+        ]
+      },
+      "fund_enriched.notionalMktValue": {
+        "purpose": "Position size/liquidity",
+        "count": 16,
+        "range": [
+          0.0,
+          1.0
+        ],
+        "mean": 0.25462043773132437,
+        "sample": [
+          0.11605661440476925,
+          0.2459142823898432,
+          0.05563671643214245
+        ]
+      }
+    },
+    "constraints": {
+      "strategy": "cost_minimization",
+      "target_bonds": 8
+    },
+    "normalization_info": {
+      "duration": {
+        "original_range": [
+          3.644588844319389,
+          7.580438155244608
+        ],
+        "column": "spreadDur"
+      },
+      "spread": {
+        "original_range": [
+          66.37854731539163,
+          123.5091051948706
+        ],
+        "column": "oas"
+      },
+      "price": {
+        "original_range": [
+          85.862825,
+          113.1693406666667
+        ],
+        "column": "price"
+      },
+      "market_value": {
+        "original_range": [
+          3095965.011057978,
+          85617606.20541334
+        ],
+        "column": "fund_enriched.notionalMktValue"
+      },
+      "rating": {
+        "original_range": [
+          0.0,
+          1.0
+        ],
+        "column": "spreadDur"
+      }
+    }
+  },
+  "optimization_results": {
+    "quantum_vqe": {
+      "solution": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "cost": 44.09512263411051,
+      "runtime": 1.912071333033964,
+      "method": "Manual_Quantum_VQE",
+      "iterations": 50,
+      "vqe_eigenvalue": 65.83438480627109,
+      "optimizer": "COBYLA",
+      "ansatz_params": 32,
+      "circuit_depth": 1,
+      "measurement_counts": {
+        "0000000010001100": 1,
+        "1010000010010010": 1,
+        "0000100001011010": 1,
+        "0001100011110000": 1,
+        "0110000001010010": 1
+      },
+      "success": false,
+      "quantum_advantage": true
+    },
+    "classical_greedy": {
+      "solution": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "cost": 28.74282490602687,
+      "runtime": 0.00011570798233151436,
+      "method": "Classical_Greedy",
+      "iterations": 1,
+      "success": true
+    },
+    "best_method": "Classical_Greedy",
+    "best_cost": 28.74282490602687
+  },
+  "trading_analysis": {
+    "n_selected": 5,
+    "strategy": "cost_minimization",
+    "trading_metrics": {
+      "total_purchase_cost": 0.7085076369705335,
+      "average_price": 0.1417015273941067,
+      "price_range": [
+        0.0,
+        0.2968687802924489
+      ],
+      "average_spread": 0.2346627005111673,
+      "total_yield_potential": 1.1733135025558366,
+      "spread_risk": 0.2189061800474482,
+      "average_duration": 0.5464835917467605,
+      "duration_risk": 0.15091399603998973,
+      "total_liquidity": 0.8938059935440814,
+      "average_liquidity": 0.1787611987088163
+    }
+  }
+}
