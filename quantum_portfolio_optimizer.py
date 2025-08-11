@@ -8,8 +8,8 @@ Complete rewrite with proper function order for trading optimization
 
 import numpy as np
 import pandas as pd
-from vanguard_excel_loader import (
-    load_vanguard_excel_data, 
+from financial_excel_loader import (
+    load_financial_excel_data, 
     prepare_quantum_dataset
 )
 import time
@@ -628,10 +628,10 @@ def main():
     
     try:
         # Load and prepare data
-        print(f"\n📊 LOADING VANGUARD DATA")
+        print(f"\n📊 LOADING financial DATA")
         print("-" * 50)
         
-        df_raw = load_vanguard_excel_data()
+        df_raw = load_financial_excel_data()
         
         # Prepare quantum-optimized dataset
         quantum_df, characteristics, norm_info = prepare_quantum_dataset(
