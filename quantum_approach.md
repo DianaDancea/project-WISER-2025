@@ -761,11 +761,3 @@ Our quantum approach to portfolio optimization represents a significant advancem
 4. **Scalable Architecture**: Foundation for future quantum financial systems
 
 The combination of VQE algorithm, QUBO formulation, and hybrid quantum-classical workflow creates a powerful optimization framework that bridges current NISQ capabilities with practical financial applications. As quantum hardware continues to improve, this approach provides a clear pathway to quantum advantage in real-world portfolio management.
-
-**Key Contributions:**
-- First implementation of VQE for real financial portfolio optimization
-- Novel QUBO formulations for multiple trading strategies
-- Demonstration of quantum advantage using actual market data
-- Production-ready quantum-classical hybrid workflow
-
-This quantum approach establishes the foundation for the next generation of computational finance, where quantum computers will enable previously impossible optimization capabilities for institutional portfolio management.
