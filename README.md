@@ -188,7 +188,7 @@ quantum_df, characteristics, norm_info = prepare_quantum_dataset(
 While the main script doesn't use argparse, you can modify parameters directly in the code:
 
 ```python
-# In quantum_portfolio_solver.py main() function
+# In quantum_portfolio_optimizer.py main() function
 quantum_df, characteristics, norm_info = prepare_quantum_dataset(
     df_raw, 
     max_assets=16,          # Adjust problem size
@@ -218,13 +218,12 @@ quantum-portfolio-optimization/
 ├── 📄 README.md                           # This file
 ├── 📄 requirements.txt                    # Python dependencies
 ├── 📄 mathematical_formulation.md         # Detailed math documentation
-├── 📄 quantum_portfolio_solver.py         # Main optimization engine
+├── 📄 quantum_portfolio_optimizer.py       # Main optimization engine
 ├── 📄 vanguard_excel_loader.py           # Data loading and preprocessing
 ├── 📄 trading_qubo_builder.py            # QUBO matrix construction (if separate)
 ├── 📊 data_assets_dump_partial.xlsx      # Vanguard bond data
+│── 📄 quantum_approach.md                # Detailed documentation of quantum approach
 │── quantum_trading_results_YYYY-MM-DD.json   # Generated output files
-│── mathematical_formulation.md           # Documentation
-│── quantum_approach.md
 
 
 ```
