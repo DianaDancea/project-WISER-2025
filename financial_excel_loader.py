@@ -8,15 +8,15 @@ from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
 
-def load_vanguard_excel_data(repo_path="./WISER_Optimization_VG"):
-    """Load the actual Vanguard Excel data file."""
+def load_financial_excel_data(repo_path="./WISER_Optimization_VG"):
+    """Load the actual financial Excel data file."""
     # Path to the Excel file
     excel_path = Path(__file__).resolve().parent / "data_assets_dump_partial.xlsx"
     
     if not excel_path.exists():
         raise FileNotFoundError(f"Excel file not found: {excel_path}")
     
-    print(f"📊 Loading Vanguard data from: {excel_path}")
+    print(f"📊 Loading financial data from: {excel_path}")
     
     # Load the Excel file
     try:
@@ -38,8 +38,8 @@ def load_vanguard_excel_data(repo_path="./WISER_Optimization_VG"):
         print(f"❌ Error loading Excel file: {e}")
         raise
 
-def analyze_vanguard_data(df):
-    """Analyze the Vanguard data structure and identify portfolio characteristics."""
+def analyze_financial_data(df):
+    """Analyze the financial data structure and identify portfolio characteristics."""
     print("\n🔬 DATA ANALYSIS")
     print("=" * 50)
     
@@ -235,7 +235,7 @@ def prepare_quantum_dataset(df, max_assets=20, selection_strategy='diverse'):
     print("=" * 60)
     
     # Step 1: Analyze the data structure
-    characteristics = analyze_vanguard_data(df)
+    characteristics = analyze_financial_data(df)
     
     # Step 2: Clean the data
     cleaned_df = clean_for_quantum(df, characteristics)
@@ -255,12 +255,12 @@ def prepare_quantum_dataset(df, max_assets=20, selection_strategy='diverse'):
 
 if __name__ == "__main__":
     # Test the enhanced data loading and preparation
-    print("🧪 TESTING ENHANCED VANGUARD DATA LOADER")
+    print("🧪 TESTING ENHANCED financial DATA LOADER")
     print("=" * 60)
     
     try:
         # Load raw data
-        df = load_vanguard_excel_data()
+        df = load_financial_excel_data()
         
         # Prepare for quantum optimization
         quantum_df, characteristics, norm_info = prepare_quantum_dataset(
