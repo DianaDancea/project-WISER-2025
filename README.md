@@ -7,6 +7,8 @@
 
 A quantum-enhanced portfolio optimization system that leverages Variational Quantum Eigensolver (VQE) to solve bond trading problems using real Vanguard market data. This project demonstrates quantum computing's potential to overcome classical optimization barriers in high-dimensional, constraint-heavy portfolio construction.
 
+# Team: Diana Elizabeth Dancea and Hajara Eve Muzammal
+
 Note: We used Qiskit to be able to access the quantum algorithms and functions, however we ran them locally on our laptops. We also read in the data directly from the Excel file. 
 
 ## 🚀 Quick Start
