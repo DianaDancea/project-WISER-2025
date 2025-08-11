@@ -1,12 +1,12 @@
-# vanguard-project-WISER-2025
-# Quantum Portfolio Optimization for Vanguard Bond Trading
+# project-WISER-2025
+# Quantum Portfolio Optimization for Bond Trading
 ## Team: Diana Elizabeth Dancea and Hajara Eve Muzammal
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Qiskit](https://img.shields.io/badge/Qiskit-0.45+-purple.svg)](https://qiskit.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A quantum-enhanced portfolio optimization system that leverages Variational Quantum Eigensolver (VQE) to solve bond trading problems using real Vanguard market data. This project demonstrates quantum computing's potential to overcome classical optimization barriers in high-dimensional, constraint-heavy portfolio construction.
+A quantum-enhanced portfolio optimization system that leverages Variational Quantum Eigensolver (VQE) to solve bond trading problems using market data. This project demonstrates quantum computing's potential to overcome classical optimization barriers in high-dimensional, constraint-heavy portfolio construction.
 
 Note: We used Qiskit to be able to access the quantum algorithms and functions, however we ran them locally on our laptops. We also read in the data directly from the Excel file. 
 
@@ -20,7 +20,7 @@ cd quantum-portfolio-optimization
 # Install dependencies
 pip install -r requirements.txt
 
-# Ensure you have the Vanguard data file
+# Ensure you have the data file
 # Place 'data_assets_dump_partial.xlsx' in the project directory
 
 # Run the optimization
@@ -50,9 +50,9 @@ python quantum_portfolio_solver.py
 
 ## 🎯 Project Overview
 
-This project addresses Vanguard's portfolio optimization challenges by implementing a hybrid quantum-classical algorithm that:
+This project addresses portfolio optimization challenges by implementing a hybrid quantum-classical algorithm that:
 
-- **Solves Real Trading Problems**: Uses actual Vanguard bond data with prices, credit spreads, duration, and liquidity metrics
+- **Solves Real Trading Problems**: Uses actual bond data with prices, credit spreads, duration, and liquidity metrics
 - **Quantum Optimization**: Implements VQE with manual parameter optimization to avoid callback conflicts
 - **Multiple Trading Strategies**: Cost minimization, yield maximization, and risk-adjusted return optimization
 - **Classical Benchmarking**: Compares quantum results against greedy and random search algorithms
@@ -78,7 +78,7 @@ Unlike academic toy problems, this implementation processes **real financial dat
 - **Liquidity Considerations**: Account for market value and trading volumes
 
 ### Data Integration
-- **Real Vanguard Data**: Processes actual Excel files with bond characteristics
+- **Real financial Data**: Processes actual Excel files with bond characteristics
 - **Intelligent Filtering**: Selects diverse, quantum-appropriate subsets
 - **Automatic Normalization**: Scales data for optimal quantum circuit performance
 - **Missing Data Handling**: Robust preprocessing with median/mode imputation
@@ -96,7 +96,7 @@ Unlike academic toy problems, this implementation processes **real financial dat
 ### Prerequisites
 - Python 3.8 or higher
 - 8GB+ RAM (for quantum simulations)
-- Vanguard bond data file: `data_assets_dump_partial.xlsx`
+- financial bond data file: `data_assets_dump_partial.xlsx`
 
 ### Step-by-Step Installation
 
@@ -148,7 +148,7 @@ python quantum_portfolio_solver.py
 ```
 
 This executes:
-1. Load and preprocess Vanguard bond data
+1. Load and preprocess financial bond data
 2. Build QUBO matrix for trading optimization
 3. Run quantum VQE optimization
 4. Execute classical benchmarks
@@ -162,7 +162,7 @@ This executes:
 from quantum_portfolio_solver import build_trading_qubo_matrix, solve_quantum_vqe_manual
 
 # Load your data
-df = load_vanguard_excel_data()
+df = load_financial_excel_data()
 
 # Build QUBO for specific strategy
 Q, constraints = build_trading_qubo_matrix(df, trading_strategy='yield_maximization')
@@ -173,9 +173,9 @@ result = solve_quantum_vqe_manual(Q, max_iter=100, optimizer_type='COBYLA')
 
 **Data Analysis Only**:
 ```python
-from vanguard_excel_loader import prepare_quantum_dataset
+from financial_excel_loader import prepare_quantum_dataset
 
-df_raw = load_vanguard_excel_data()
+df_raw = load_financial_excel_data()
 quantum_df, characteristics, norm_info = prepare_quantum_dataset(
     df_raw, 
     max_assets=16, 
@@ -220,10 +220,10 @@ quantum-portfolio-optimization/
 ├── 📄 mathematical_formulation.md         # Detailed math documentation
 ├── 📄 quantum_approach.md                 # Detailed documentation of quantum approach
 ├── 📄 quantum_portfolio_solver.py         # Main optimization engine
-├── 📄 vanguard_excel_loader.py            # Data loading and preprocessing
+├── 📄 financial_excel_loader.py            # Data loading and preprocessing
 ├── 📄 results_analyzer.py                 # This analyzes the demo results
 ├── 📄 demo_setup.py                       # This is the setup script
-├── 📊 data_assets_dump_partial.xlsx       # Given data from Vanguard
+├── 📊 data_assets_dump_partial.xlsx       # Given data from financial
 └── 📁 Generated Results (after running): # Generated output files
     ├── quantum_trading_results_YYYY-MM-DD.json
     ├── performance_comparison.png
@@ -242,9 +242,9 @@ quantum-portfolio-optimization/
 - `analyze_trading_solution()`: Results interpretation in trading terms
 - `solve_classical_fallback()` & `solve_classical_greedy()`: Classical benchmarks
 
-#### `vanguard_excel_loader.py`
+#### `financial_excel_loader.py`
 **Data preprocessing module** featuring:
-- `load_vanguard_excel_data()`: Excel file loading with error handling
+- `load_financial_excel_data()`: Excel file loading with error handling
 - `prepare_quantum_dataset()`: Complete preprocessing pipeline
 - `filter_for_quantum_size()`: Intelligent asset selection for quantum optimization
 - `normalize_for_quantum()`: Data scaling for quantum circuits
@@ -496,7 +496,7 @@ pip install --upgrade qiskit qiskit-aer
 # Solution: Ensure data file is in correct location
 ls data_assets_dump_partial.xlsx
 
-# If missing, place the Vanguard data file in project root
+# If missing, place the financial data file in project root
 ```
 
 #### 3. VQE Convergence Issues
@@ -625,7 +625,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🏆 Acknowledgments
 
-- **Vanguard**: For providing the challenge and real-world bond data
+- **financial**: For providing the challenge and real-world bond data
 - **WISER 2025**: Quantum program framework and support
 - **Qiskit Community**: Quantum computing tools and documentation
 - **Contributors**: All developers who have contributed to this project
@@ -636,7 +636,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - ✅ **Core Implementation**: Complete and tested
 - ✅ **VQE Algorithm**: Fully functional with manual optimization
-- ✅ **Real Data Integration**: Vanguard Excel processing working
+- ✅ **Real Data Integration**: financial Excel processing working
 - ✅ **Trading Strategies**: Three strategies implemented
 - ✅ **Classical Benchmarks**: Greedy and random search included
 - ✅ **Results Analysis**: Comprehensive trading metrics
