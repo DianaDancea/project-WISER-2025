@@ -14,7 +14,7 @@
 
 ## Problem Overview
 
-The quantum portfolio optimization problem addresses the challenge of selecting an optimal subset of bonds from a universe of available securities to minimize trading costs, maximize expected returns, or optimize risk-adjusted performance. This formulation is specifically designed for Vanguard's bond trading scenarios using real market data.
+The quantum portfolio optimization problem addresses the challenge of selecting an optimal subset of bonds from a universe of available securities to minimize trading costs, maximize expected returns, or optimize risk-adjusted performance. This formulation is specifically designed for financial's bond trading scenarios using real market data.
 
 **Core Challenge**: Given a universe of `n` bonds with characteristics (price, credit spread, duration, liquidity), select a portfolio of `k` bonds that optimizes a specific trading objective while satisfying practical constraints.
 
@@ -386,4 +386,4 @@ if min_eigenval < 0:
 
 ---
 
-This mathematical formulation provides the complete theoretical foundation for the quantum portfolio optimization implementation, ensuring that the quantum algorithm correctly solves the bond trading problem while maintaining interpretability and practical relevance for Vanguard's investment processes.
+This mathematical formulation provides the complete theoretical foundation for the quantum portfolio optimization implementation, ensuring that the quantum algorithm correctly solves the bond trading problem while maintaining interpretability and practical relevance for financial's investment processes.
