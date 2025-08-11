@@ -73,12 +73,12 @@ def check_project_files():
     
     required_files = {
         'quantum_portfolio_optimizer.py': 'Main optimization script',
-        'vanguard_excel_loader.py': 'Data loading module',
+        'financial_excel_loader.py': 'Data loading module',
         'requirements.txt': 'Dependencies list'
     }
     
     optional_files = {
-        'data_assets_dump_partial.xlsx': 'Vanguard bond data (will use demo data if missing)',
+        'data_assets_dump_partial.xlsx': 'financial bond data (will use demo data if missing)',
         'mathematical_formulation.md': 'Mathematical documentation'
     }
     
@@ -160,7 +160,7 @@ def run_quick_demo():
             build_trading_qubo_matrix,
             solve_classical_greedy
         )
-        from vanguard_excel_loader import prepare_quantum_dataset, load_vanguard_excel_data
+        from financial_excel_loader import prepare_quantum_dataset, load_financial_excel_data
         import numpy as np
         import pandas as pd
         
