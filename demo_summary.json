@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-08-10T22:22:39.340000",
+  "performance_summary": {
+    "Metric": {
+      "0": "Optimization Method",
+      "1": "Assets Analyzed",
+      "2": "Portfolio Size",
+      "3": "Optimization Cost",
+      "4": "Runtime (seconds)",
+      "5": "Quantum Advantage",
+      "6": "Success Rate"
+    },
+    "Quantum VQE": {
+      "0": "Manual VQE",
+      "1": 16,
+      "2": 6,
+      "3": "44.0951",
+      "4": "1.912",
+      "5": "-53.41%",
+      "6": "\u274c"
+    },
+    "Classical Greedy": {
+      "0": "Greedy Selection",
+      "1": 16,
+      "2": 5,
+      "3": "28.7428",
+      "4": "0.000",
+      "5": "Baseline",
+      "6": "\u2705"
+    }
+  },
+  "quantum_advantage": -53.412626553851815,
+  "key_metrics": {
+    "quantum_cost": 44.09512263411051,
+    "classical_cost": 28.74282490602687,
+    "quantum_runtime": 1.912071333033964,
+    "classical_runtime": 0.00011570798233151436,
+    "quantum_assets": 6,
+    "classical_assets": 5
+  }
+}

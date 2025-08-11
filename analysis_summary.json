@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-08-10T22:27:41.576706",
+  "quantum_advantage": -53.412626553851815,
+  "quantum_cost": 44.09512263411051,
+  "classical_cost": 28.74282490602687,
+  "quantum_runtime": 1.912071333033964,
+  "classical_runtime": 0.00011570798233151436,
+  "quantum_assets": 6,
+  "classical_assets": 5
+}
