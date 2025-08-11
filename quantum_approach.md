@@ -56,7 +56,7 @@ Where:
 - `x_i = 0` means "don't buy asset i"
 - `n` is the number of available assets
 
-*Note: In our scenario, we are buying bonds and trying to optimize the cost of buying and selling them
+*Note: In our scenario, we are buying bonds and trying to optimize the cost of buying and selling them.
 
 #### Step 2: Objective Functions
 We implement three trading strategies:
