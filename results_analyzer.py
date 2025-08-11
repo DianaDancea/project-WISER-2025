@@ -27,7 +27,7 @@ class PortfolioResultsAnalyzer:
     
     def __init__(self):
         self.results = None
-        self.vanguard_df = None
+        self.financial_df = None
         self.demo_bonds = None
         
         # Set up plotting style
@@ -55,20 +55,20 @@ class PortfolioResultsAnalyzer:
             print(f"❌ Error loading results: {e}")
             return False
     
-    def load_vanguard_data(self):
-        """Load original Vanguard data or create demo data"""
+    def load_financial_data(self):
+        """Load original financial data or create demo data"""
         try:
             excel_path = Path("data_assets_dump_partial.xlsx")
             if excel_path.exists():
-                self.vanguard_df = pd.read_excel(excel_path, sheet_name=0)
-                print(f"✅ Loaded Vanguard data: {len(self.vanguard_df)} bonds")
+                self.financial_df = pd.read_excel(excel_path, sheet_name=0)
+                print(f"✅ Loaded financial data: {len(self.financial_df)} bonds")
             else:
-                self.vanguard_df = self.create_demo_data()
+                self.financial_df = self.create_demo_data()
                 print("⚠️ Using synthetic demo data")
             return True
         except Exception as e:
             print(f"⚠️ Could not load Excel data: {e}")
-            self.vanguard_df = self.create_demo_data()
+            self.financial_df = self.create_demo_data()
             return True
     
     def create_demo_data(self):
@@ -95,7 +95,7 @@ class PortfolioResultsAnalyzer:
         classical_solution = np.array(self.results['optimization_results']['classical_greedy']['solution'])
         
         n_assets = len(quantum_solution)
-        self.demo_bonds = self.vanguard_df.head(n_assets).copy().reset_index(drop=True)
+        self.demo_bonds = self.financial_df.head(n_assets).copy().reset_index(drop=True)
         
         self.demo_bonds['quantum_selected'] = quantum_solution
         self.demo_bonds['classical_selected'] = classical_solution
@@ -420,7 +420,7 @@ class PortfolioResultsAnalyzer:
         if not self.load_results():
             return False
         
-        if not self.load_vanguard_data():
+        if not self.load_financial_data():
             return False
         
         if not self.prepare_portfolio_data():
