@@ -221,17 +221,11 @@ quantum-portfolio-optimization/
 ├── 📄 vanguard_excel_loader.py           # Data loading and preprocessing
 ├── 📄 trading_qubo_builder.py            # QUBO matrix construction (if separate)
 ├── 📊 data_assets_dump_partial.xlsx      # Vanguard bond data
-├── 📁 results/                           # Generated output files
-│   ├── quantum_trading_results_YYYY-MM-DD.json
-│   └── performance_plots/
-├── 📁 docs/                              # Documentation
-│   ├── mathematical_formulation.md
-│   ├── quantum_approach.md
-│   └── performance_analysis.md
-└── 📁 tests/                             # Unit tests (if available)
-    ├── test_qubo_construction.py
-    ├── test_data_loading.py
-    └── test_quantum_solver.py
+│── quantum_trading_results_YYYY-MM-DD.json   # Generated output files
+│── mathematical_formulation.md           # Documentation
+│── quantum_approach.md
+
+
 ```
 
 ### Core Files Description
