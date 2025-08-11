@@ -533,23 +533,11 @@ def parallel_vqe_runs(Q, n_runs=5):
 
 ### Measured Performance Improvements
 
-**Typical Results from Our Implementation:**
-```
-Quantum VQE vs Classical Greedy:
-- Cost Improvement: 5-15% better solutions
-- Solution Quality: More diverse portfolios
-- Constraint Satisfaction: Better risk-return balance
-- Runtime: Competitive for small portfolios (8-16 assets)
-```
-
-**Example Performance Metrics:**
-```python
-# From actual runs
-quantum_cost = 4.237
-classical_cost = 4.891
-quantum_advantage = (classical_cost - quantum_cost) / classical_cost * 100
-# Result: +13.4% quantum advantage
-```
+**Realistic Performance Results:**
+- Best Case: 5-15% quantum advantage (under ideal conditions)
+- Typical NISQ: Variable performance, sometimes quantum disadvantage
+- Current Results: -50% to +15% range due to noise and optimization challenges
+- Example Run: quantum_cost = 44.095, classical_cost = 28.743, quantum_disadvantage = -53.41%
 
 ### Quantum Advantage Mechanisms
 
@@ -580,33 +568,31 @@ def quantum_vqe(Q):
 - **Classical**: Tends toward similar local solutions
 - **Quantum**: Quantum randomness provides diverse high-quality solutions
 
-### Scalability Analysis
-
-**Current Performance:**
-- **Optimal Range**: 8-16 qubits (assets)
-- **NISQ Limitations**: Noise limits larger problems
-- **Circuit Depth**: 2-4 layers practical
-- **Parameter Count**: 20-50 parameters manageable
-
-**Projected Scaling:**
-```python
-# Performance vs problem size
-def quantum_advantage_scaling(n_assets):
-    if n_assets <= 8:
-        return "Strong advantage (15-25%)"
-    elif n_assets <= 16:
-        return "Moderate advantage (5-15%)"
-    elif n_assets <= 32:
-        return "Potential advantage (0-10%)"  # Future hardware
-    else:
-        return "Classical preferred (current NISQ limitations)"
-```
-
----
-
 ## Limitations and Future Directions
 
 ### Current Limitations
+
+**Current Status:**
+- Proof-of-concept implementation demonstrating VQE for portfolio optimization
+- Variable performance due to NISQ device limitations
+- Strong foundation for future quantum advantage as hardware improves
+- Demonstrates feasibility of quantum approach for financial optimization
+  
+### Current NISQ Reality
+
+**Performance Variability:**
+Our implementation shows significant run-to-run variation:
+- Best runs: 5-15% quantum advantage
+- Poor runs: 50%+ quantum disadvantage  
+- Success depends on: initialization, circuit depth, noise levels
+
+**Why This Happens:**
+- Quantum noise degrades solution quality
+- VQE often gets trapped in local minima
+- Circuit depth limited by decoherence
+- Measurement statistics require many shots
+
+**This is Normal:** Current quantum research commonly shows mixed results on NISQ devices.
 
 **1. NISQ Device Constraints**
 - **Qubit Count**: Limited to 10-20 assets for meaningful optimization
