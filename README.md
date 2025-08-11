@@ -218,13 +218,17 @@ quantum-portfolio-optimization/
 ├── 📄 README.md                           # This file
 ├── 📄 requirements.txt                    # Python dependencies
 ├── 📄 mathematical_formulation.md         # Detailed math documentation
-├── 📄 quantum_portfolio_optimizer.py       # Main optimization engine
-├── 📄 vanguard_excel_loader.py           # Data loading and preprocessing
-├── 📄 trading_qubo_builder.py            # QUBO matrix construction (if separate)
-├── 📊 data_assets_dump_partial.xlsx      # Vanguard bond data
-│── 📄 quantum_approach.md                # Detailed documentation of quantum approach
-│── quantum_trading_results_YYYY-MM-DD.json   # Generated output files
-
+├── 📄 quantum_approach.md                 # Detailed documentation of quantum approach
+├── 📄 quantum_portfolio_solver.py         # Main optimization engine
+├── 📄 vanguard_excel_loader.py            # Data loading and preprocessing
+├── 📄 results_analyzer.py                 # This analyzes the demo results
+├── 📄 demo_setup.py                       # This is the setup script
+├── 📊 data_assets_dump_partial.xlsx       # Given data from Vanguard
+└── 📁 Generated Results (after running): # Generated output files
+    ├── quantum_trading_results_YYYY-MM-DD.json
+    ├── performance_comparison.png
+    ├── portfolio_analysis.png
+    └── analysis_summary.json
 
 ```
 
